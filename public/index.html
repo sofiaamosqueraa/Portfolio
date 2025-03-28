@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <!-- Título do site (aparece na aba do navegador) -->
+    <title>Portfólio - [Seu Nome]</title>
+    
+    <!-- Descrição para SEO -->
+    <meta name="description" content="Portfólio de [Seu Nome], desenvolvedor web, mostrando projetos e habilidades em desenvolvimento front-end e back-end." />
+    
+    <!-- Meta tag para otimização de dispositivos móveis -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- Fonte do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <!-- Você pode adicionar outras fontes ou links aqui -->
+    
+    <!-- Styles externos (se você tiver algum arquivo CSS global ou externo) -->
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    
+    <style>
+      /* Exemplo de animação de fundo (opcional) */
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: #282c34;
+        color: white;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      /* Estilo para o carregamento de página */
+      #root {
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Este div é onde o React vai "injetar" a aplicação -->
+    <div id="root"></div>
+  </body>
+</html>
