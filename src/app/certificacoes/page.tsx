@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useState, useEffect } from 'react';
 
-// Componente para Card de Certificación
+// Componente para Card de Certificação
 const CertificationCard = ({
   badgeId,
   description,
@@ -14,7 +14,7 @@ const CertificationCard = ({
   description: string;
   onClick: (description: string) => void;
 }) => (
-  <div className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transform transition duration-300 h-[320px] flex flex-col justify-between">
+  <div className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transform transition duration-300 flex flex-col h-[340px]"> {/* Aumenté la altura del card */}
     <div className="flex justify-center mb-4">
       <div
         data-iframe-width="150"
@@ -24,13 +24,19 @@ const CertificationCard = ({
         className="w-full h-[200px] flex justify-center items-center"
       ></div>
     </div>
-    {/* Botón dentro del card */}
-    <button
-      onClick={() => onClick(description)}
-      className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full mt-4 self-center"
-    >
-      Ver Detalles
-    </button>
+
+    {/* Contenido flexible que empuja el botón hacia abajo */}
+    <div className="flex-grow"></div>  {/* Esto empuja el botón hacia la parte inferior */}
+
+    {/* Botão dentro do card */}
+{/* Añadí um margen inferior aqui */}
+<button
+  onClick={() => onClick(description)}
+  className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full mt-4 self-center mb-4"
+>
+  Ver Detalhes
+</button>
+
   </div>
 );
 
@@ -38,7 +44,7 @@ const CertificationsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [certificationDescription, setCertificationDescription] = useState('');
 
-  // Carregar o script do Credly dinamicamente
+  // Cargar el script de Credly dinámicamente
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "//cdn.credly.com/assets/utilities/embed.js";
@@ -97,8 +103,13 @@ const CertificationsPage = () => {
             onClick={handleModalOpen}
           />
           <CertificationCard
-            badgeId="your-new-credly-id"  // Substitua pelo ID correto
-            description="Experiência adquirida ao concluir a certificação de Example Certification"
+            badgeId="1672f07d-27f6-4f23-a8dc-3de657e9a40f"  
+            description="Experiência adquirida ao concluir a certificação de Started with Serverless"
+            onClick={handleModalOpen}
+          />
+           <CertificationCard
+            badgeId="ce3fdb8c-082e-422e-8a50-3f932fe73360"  
+            description="Experiência adquirida ao concluir a certificação de Started with Databases"
             onClick={handleModalOpen}
           />
         </div>
