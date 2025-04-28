@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useState, useEffect } from 'react';
 
-// Componente para Card de Certificação
 const CertificationCard = ({
   badgeId,
   description,
@@ -25,11 +24,9 @@ const CertificationCard = ({
       ></div>
     </div>
 
-    {/* Contenido flexible que empuja el botón hacia abajo */}
-    <div className="flex-grow"></div>  {/* Esto empuja el botón hacia la parte inferior */}
+    <div className="flex-grow"></div>  
 
-    {/* Botão dentro do card */}
-{/* Añadí um margen inferior aqui */}
+   
 <button
   onClick={() => onClick(description)}
   className="bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded-full mt-4 self-center mb-4"
@@ -44,7 +41,6 @@ const CertificationsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [certificationDescription, setCertificationDescription] = useState('');
 
-  // Cargar el script de Credly dinámicamente
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "//cdn.credly.com/assets/utilities/embed.js";
@@ -112,7 +108,13 @@ const CertificationsPage = () => {
             description="Experiência adquirida ao concluir a certificação de Started with Databases"
             onClick={handleModalOpen}
           />
+          <CertificationCard
+            badgeId="b37b6105-bc3e-4374-829d-1757d496dc4c"  
+            description="Experiência adquirida ao concluir a certificação de Started with Storage "
+            onClick={handleModalOpen}
+          />
         </div>
+
 
         {/* Modal */}
         {isModalOpen && (
